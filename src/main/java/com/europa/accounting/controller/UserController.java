@@ -7,6 +7,7 @@ import com.europa.accounting.mapper.UserMapper;
 import com.europa.accounting.param.LoginParam;
 import com.europa.accounting.service.TokenService;
 import com.europa.accounting.vo.LoginVO;
+import com.europa.accounting.vo.UserRoleVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -39,6 +40,12 @@ public class UserController {
             return ok(vo);
         }
         return fail("密码错误");
+    }
+
+    @GetMapping("getByToken")
+    public Result<UserRoleVO> getUserByToken(@RequestParam String token) {
+        UserRoleVO vo = tokenService.getUserByToken(token);
+        return Result.ok(vo);
     }
 
     @PostMapping("regist")
