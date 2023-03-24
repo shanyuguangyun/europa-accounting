@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://121.14.12.104:3306/wds?useUnicode=true&allowMultiQueries=true
+    url: jdbc:mysql://127.0.0.1:3306/wds?useUnicode=true&allowMultiQueries=true
     username: root
-    password: SINOcom11#
+    password: root
   redis:
     port: 6379
     password: 123456
